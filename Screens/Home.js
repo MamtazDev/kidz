@@ -8,6 +8,9 @@ import Landing from "./Landing";
 import Sqlbase from "./Sqlbase";
 import BookCategory from "./BookCategory";
 import PdfReader from "./PdfReader";
+import SchoolCategory from "./SchoolCategory";
+import BookCollection from "./BookCollection";
+import BookPDF from "./BookPDF";
 
 const Tab = createBottomTabNavigator();
 
@@ -24,7 +27,7 @@ function StarterRoute() {
           left: 20,
           right: 20,
           elevation: 0,
-          backgroundColor: '#ffffff',
+          backgroundColor: '#702ABA',
           borderRadius: 15,
           height: 70,
         },
@@ -49,7 +52,8 @@ function StarterRoute() {
                 style={{
                   width: 20,
                   height: 20,
-                  tintColor: focused ? "#2E20CA" : "#748c94",
+                  fontWeight:'blod',
+                  // tintColor: focused ? "#ffffff" : "#ffffff",
                 }}
                 alt="image"
               />
@@ -98,7 +102,8 @@ function StarterRoute() {
 
       <Tab.Screen
         name="Database"
-        component={Sqlbase}
+        component={Landing}
+        // component={Sqlbase}
         options={{
           tabBarIcon: ({ focused }) => (
             <View
@@ -130,7 +135,8 @@ function StarterRoute() {
 
       <Tab.Screen
         name="Profile"
-        component={PdfReader}
+        component={Landing}
+        // component={PdfReader}
         options={{
           tabBarIcon: ({ focused }) => (
             <View
@@ -184,6 +190,33 @@ export default function MyStack() {
       <Stack.Screen
         name="book_category"
         component={BookCategory}
+        options={{
+          headerTintColor: "white",
+          headerStyle: { backgroundColor: "#4E43FF" },
+        }}
+      />
+      <Stack.Screen
+        name="book_collection"
+        component={BookCollection}
+        options={{
+          headerTintColor: "white",
+          headerStyle: { backgroundColor: "#4E43FF" },
+        }}
+      />
+      <Stack.Screen
+        name="BookPDF"
+        component={BookPDF}
+        options={{
+          headerTintColor: "white",
+          headerStyle: { backgroundColor: "#4E43FF" },
+        }}
+      />
+
+
+
+      <Stack.Screen
+        name="school_category"
+        component={SchoolCategory}
         options={{
           headerTintColor: "white",
           headerStyle: { backgroundColor: "#4E43FF" },
